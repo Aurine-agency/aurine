@@ -569,6 +569,18 @@ footer {
 @media (max-width: 480px) {
   .cta-wrapper { margin-top: 20px; }
 }
+
+/* CTA visibility helpers */
+.desktop-only { display: inline-block; }
+.mobile-only { display: none; }
+
+/* Mobile swap */
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: block !important; text-align: center; margin-top: 20px; }
+  .mobile-only .btn-pdf { display: inline-block; width: 100%; }
+}
+
 </style>
 </head>
 <body>
@@ -607,13 +619,14 @@ footer {
 </svg>
 </div>
 <p>Z nami Twój salon staje się widoczny dla właściwych osób – kobiet z Twojego miasta, które szukają usług beauty. Działamy kompleksowo, przejrzyście i skutecznie.</p>
+<a class="btn-pdf desktop-only" href="mailto:kontakt@aurine.pl">Umów darmową konsultację</a>
 </div>
 <div class="col-right">
 <div class="feature"><i class="fas fa-bullseye"></i><div><h4>Precyzyjne targetowanie</h4><p>Docieramy tylko do osób, które faktycznie mogą zostać Twoimi klientkami.</p></div></div>
 <div class="feature"><i class="fas fa-chart-line"></i><div><h4>Więcej rezerwacji</h4><p>Kampanie nastawione na realne efekty – nie tylko lajki.</p></div></div>
 <div class="feature"><i class="fas fa-hand-holding-heart"></i><div><h4>Prosta współpraca</h4><p>Transparentne działania, jasne raporty i szybki kontakt.</p></div></div>
 </div>
-</div><div class="cta-wrapper"><a class="btn-pdf" href="mailto:kontakt@aurine.pl">Umów darmową konsultację</a></div>
+</div><div class="cta-mobile mobile-only"><a class="btn-pdf" href="mailto:kontakt@aurine.pl">Umów darmową konsultację</a></div>
 </section>
 <!-- Jak to działa -->
 <section class="section" style="background:#181818;">
@@ -626,13 +639,16 @@ footer {
 </svg>
 </div>
 <p>Współpraca z Aurine to prosty i przejrzysty proces. Krok po kroku przeprowadzimy Cię od pierwszej rozmowy aż po widoczne efekty w Twoim kalendarzu rezerwacji.</p>
+<a class="btn-pdf desktop-only" download href="oferta.pdf">Zobacz ofertę współpracy</a>
 </div>
 <div class="col-right">
 <div class="feature"><i class="fas fa-comments"></i><div><h4>Konsultacja</h4><p>Rozmawiamy o Twoim salonie i ustalamy cele reklamowe.</p></div></div>
 <div class="feature"><i class="fas fa-bullhorn"></i><div><h4>Kampania</h4><p>Przygotowujemy i uruchamiamy skuteczne reklamy Facebook Ads.</p></div></div>
 <div class="feature"><i class="fas fa-calendar-check"></i><div><h4>Efekty</h4><p>Nowe klientki i pełny kalendarz rezerwacji – mierzalne wyniki.</p></div></div>
 </div>
-</div><div class="cta-wrapper"><a class="btn-pdf" download="" href="OFerta.pdf">Zobacz ofertę współpracy</a></div>
+<div class="cta-mobile mobile-only">
+  <a class="btn-pdf" download href="oferta.pdf">Zobacz ofertę współpracy</a>
+</div>
 </section>
 <!-- Jak zaczynamy współpracę -->
 <section class="section steps">
