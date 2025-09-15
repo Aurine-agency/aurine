@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regulamin – Aurine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #121212; color: #eee; line-height: 1.6; }
+
+    /* === NAVIGATION === */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1a1a1a; position: sticky; top: 0; z-index: 100; }
+    nav .logo { font-weight: 700; font-size: 1.4rem; color: #c084fc; }
+    nav .nav-links { display: flex; gap: 20px; align-items: center; }
+    nav .nav-links a { color: #eee; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav .nav-links a:hover { color: #c084fc; }
+    nav a.cta { background: linear-gradient(135deg,#c084fc,#9333ea); color: #fff; padding: 10px 24px; border-radius: 25px; text-decoration: none; transition: 0.3s; }
+    nav a.cta:hover { opacity: 0.85; }
+    .menu-toggle { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; }
+    .nav-right { display: none; }
+
+    @media (min-width: 769px) {
+      .nav-right { display: flex !important; align-items: center; gap: 20px; }
+    }
+    @media (max-width: 768px) {
+      nav { flex-wrap: wrap; }
+      .menu-toggle { display: block; margin-left: auto; }
+      .nav-right {
+        flex-direction: column; gap: 15px; width: 100%; padding: 20px;
+        background: rgba(15,15,15,0.95); border-radius: 12px; margin-top: 10px;
+      }
+      .nav-right.active { display: flex; }
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    main.section { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+    .section h2, .section h3 { color: #fff; margin: 20px 0 10px; }
+    .section p, .section ul { color: #bbb; margin-bottom: 15px; }
+    .section ul { padding-left: 20px; }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a; padding: 20px 30px; color: #bbb;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: nowrap;
+    }
+    .footer-left { display: flex; align-items: center; gap: 15px; font-size: 0.9rem; }
+    .footer-left div { display: flex; gap: 10px; }
+    .footer-left a { color: #c084fc; text-decoration: none; }
+    .footer-left a:hover { text-decoration: underline; }
+    .footer-right { display: flex; gap: 15px; }
+    .footer-btn { display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,#c084fc,#9333ea);
+      color: #fff; text-decoration: none; transition: 0.3s; font-size: 1.2rem; }
+    .footer-btn:hover { opacity: 0.85; }
+    @media (max-width: 768px) {
+      footer { flex-direction: column; text-align: center; gap: 15px; flex-wrap: wrap; }
+      .footer-right { order: 1; justify-content: center; }
+      .footer-left { order: 2; flex-direction: column; align-items: center; gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Aurine</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Strona główna</a>
+        <a href="about.html">O nas</a>
+      
+        <a href="contact.html">Kontakt</a>
+      </div>
+      <a href="index.html#kontakt" class="cta">Umów konsultację</a>
+    </div>
+  </nav>
+
+  <!-- PRIVACY CONTENT -->
+  <main class="section">
+    <h2>Regulamin</h2>
+    <p>Regulamin określa zasady przetwarzania i ochrony danych osobowych Użytkowników korzystających ze strony <strong>Aurine</strong>.</p>
+
+    <h3>1. Administrator danych</h3>
+    <p>Administratorem danych osobowych jest firma Aurine, e-mail: kontakt@aurine.pl.</p>
+
+    <h3>2. Zakres zbieranych danych</h3>
+    <p>Gromadzimy dane przekazywane dobrowolnie przez Użytkownika (np. imię, e-mail) oraz dane zbierane automatycznie podczas korzystania ze strony (np. adres IP, pliki cookies).</p>
+
+    <h3>3. Cele przetwarzania</h3>
+    <ul>
+      <li>umożliwienie kontaktu i obsługi zapytań,</li>
+      <li>realizacja usług,</li>
+      <li>marketing własny Administratora,</li>
+      <li>analiza statystyk odwiedzin strony.</li>
+    </ul>
+
+    <h3>4. Podstawy prawne przetwarzania</h3>
+    <p>Dane osobowe przetwarzane są zgodnie z Rozporządzeniem RODO na podstawie zgody Użytkownika, umowy lub uzasadnionego interesu Administratora.</p>
+
+    <h3>5. Prawa Użytkownika</h3>
+    <p>Użytkownik ma prawo do wglądu, sprostowania, usunięcia swoich danych, ograniczenia przetwarzania, przenoszenia danych, sprzeciwu oraz wniesienia skargi do organu nadzorczego.</p>
+
+    <h3>6. Pliki cookies</h3>
+    <p>Strona wykorzystuje pliki cookies w celach statystycznych, marketingowych oraz zapewnienia prawidłowego działania serwisu. Użytkownik może zmienić ustawienia cookies w przeglądarce.</p>
+
+    <h3>7. Okres przechowywania danych</h3>
+    <p>Dane osobowe przechowywane są przez okres niezbędny do realizacji celów przetwarzania, zgodnie z obowiązującymi przepisami prawa.</p>
+
+    <h3>8. Kontakt</h3>
+    <p>Wszelkie pytania dotyczące ochrony danych należy kierować na adres: kontakt@aurine.pl.</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <div>© 2025 Aurine. All Rights Reserved</div>
+      <div>
+        <a href="terms.html">Regulamin</a> | 
+        <a href="terms.html">Regulamin</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:kontakt@aurine.pl" class="footer-btn"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/48731856524" class="footer-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navRight = document.querySelector('.nav-right');
+    toggle.addEventListener('click', () => {
+      navRight.classList.toggle('active');
+      toggle.innerHTML = navRight.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>

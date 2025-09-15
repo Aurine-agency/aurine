@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurine – Facebook Ads dla salonów beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #121212; color: #eee; line-height: 1.6; }
+
+    /* === NAVIGATION === */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1a1a1a; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+    nav .logo { font-weight: 700; font-size: 1.4rem; color: #c084fc; }
+    
+    nav .nav-links { display: flex; gap: 20px; align-items: center; }
+    nav .nav-links a { color: #eee; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav .nav-links a:hover { color: #c084fc; }
+    nav a.cta { background: linear-gradient(135deg,#c084fc,#9333ea); color: #fff; padding: 10px 24px; border-radius: 25px; text-decoration: none; transition: 0.3s; }
+    nav a.cta:hover { opacity: 0.85; }
+
+    /* === HERO === */
+    header { position: relative; text-align: center; color: #fff; }
+    header .hero-img { position: relative; width: 100%; height: 70vh; overflow: hidden; }
+    header .hero-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+    header .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 800px; padding: 20px; }
+    header h1 { font-size: 2.8rem; margin-bottom: 20px; }
+    header p { font-size: 1.2rem; margin-bottom: 25px; color: #ddd; }
+    header a { display: inline-block; background: linear-gradient(135deg,#c084fc,#9333ea); color: #fff; padding: 15px 30px; border-radius: 30px; font-weight: 600; text-decoration: none; }
+    header a:hover { opacity: 0.9; }
+
+    .section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+    .section h2 { font-size: 2.2rem; color: #fff; text-align: center; }
+
+    /* === UNDERLINE === */
+    .underline { display: inline-block; position: relative; padding-bottom: 15px; }
+    .underline h2, .underline h3 { font-size: 2rem; color: #fff; margin: 0; text-align: left; }
+    .underline svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 35px; }
+
+    /* === TWO-COL === */
+    .two-col { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; }
+    .two-col .col-left { flex: 1; min-width: 280px; }
+    .two-col .col-left p { color: #bbb; margin-top: 15px; margin-bottom: 20px; }
+    .two-col .col-left a, .btn-pdf {
+      display: inline-block; background: linear-gradient(135deg,#c084fc,#9333ea);
+      color: #fff; padding: 14px 28px; border-radius: 30px;
+      font-weight: 600; text-decoration: none; margin-top: 15px; transition: 0.3s;
+    }
+    .two-col .col-left a:hover, .btn-pdf:hover { opacity: 0.9; }
+    .two-col .col-right { flex: 1; min-width: 280px; }
+    .feature { display: flex; align-items: flex-start; margin-bottom: 30px; }
+    .feature i { font-size: 1.5rem; margin-right: 15px; color: #c084fc; }
+    .feature div h4 { font-size: 1.1rem; margin-bottom: 6px; color: #fff; }
+    .feature div p { font-size: 0.95rem; color: #bbb; }
+
+    /* === STEPS SECTION === */
+    .steps { background:#181818; text-align:center; }
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:50px; }
+    
+.step-box {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+  padding: 40px 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(192,132,252,0.25);
+  opacity:0;
+  transform: translateY(40px) scale(0.9);
+  transform-origin: center center;
+  transition: transform 0.4s ease, opacity 0.6s ease, box-shadow 0.4s ease, background 0.4s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+
+.step-box.show {
+  opacity:1;
+  transform: translateY(0) scale(1);
+}
+
+.step-box:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  background: linear-gradient(135deg, #2a2a2a, #3a2f48);
+}
+
+.step-box .step-icon {
+  font-size:2.4rem;
+  color:#c084fc;
+  margin-bottom:20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.step-box:hover .step-icon {
+  transform: scale(1.2) rotate(8deg);
+  color:#9333ea;
+}
+
+.step-title {
+  font-weight:700;
+  font-size:1.2rem;
+  margin-bottom:12px;
+  color:#fff;
+}
+
+.step-desc {
+  color:#bbb;
+  font-size:1rem;
+  line-height:1.5;
+}
+
+
+.step-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+    .step-icon { font-size:2rem; color:#c084fc; margin-bottom:15px; }
+    .step-title { font-weight:600; font-size:1.1rem; margin-bottom:10px; color:#fff; }
+    .step-desc { color:#bbb; font-size:0.95rem; }
+
+    /* === FAQ === */
+    .faq { max-width: 800px; margin: auto; }
+    .faq-item { margin-bottom: 15px; border-bottom: 1px solid #333; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; outline: none; padding: 15px; font-size: 1.1rem; color: #fff; cursor: pointer; position: relative; }
+    .faq-question::after { content: '+'; position: absolute; right: 20px; font-size: 1.3rem; color: #c084fc; transition: transform 0.3s; }
+    .faq-item.active .faq-question::after { content: '-'; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 15px; color: #bbb; }
+    .faq-item.active .faq-answer { max-height: 300px; padding: 15px; }
+
+    
+/* === TESTIMONIALS (nowy styl) === */
+    .testimonials { background: #181818; text-align: center; padding-bottom: 100px; }
+    .testimonials-slider { position: relative; max-width: 800px; margin: 50px auto 0; perspective: 1000px; min-height: 220px; }
+    .testimonial-card {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 90%;
+      max-width: 700px;
+      transform: translateX(-50%) translateY(30px) scale(0.9) rotateY(10deg);
+      opacity: 0;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px rgba(192,132,252,0.3);
+      border: 1px solid rgba(192,132,252,0.3);
+      transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .testimonial-card.active {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1) rotateY(0deg);
+      position: relative;
+      z-index: 2;
+    }
+    .testimonial-card::before {
+      content: "❝";
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 3rem;
+      color: rgba(192,132,252,0.15);
+      pointer-events: none;
+    }
+    .testimonial-text {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: #ec4899;
+      font-size: 1.1rem;
+    }
+    .slider-dots { display: flex; justify-content: center; margin-top: 30px; gap: 10px; }
+    .slider-dots span { width: 12px; height: 12px; background: #444; border-radius: 50%; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .slider-dots .active { background: #c084fc; transform: scale(1.2); }
+
+
+/* === FOOTER (premium) === */
+
+footer a {
+  color: #c084fc;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+    
+    
+    
+    
+  
+.step-box:hover .step-icon {
+  transform: scale(1.2) rotate(8deg);
+  transition: transform 0.3s ease;
+}
+
+
+/* Transparent navbar with blur */
+nav {
+  backdrop-filter: blur(12px);
+  background: rgba(15, 15, 15, 0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.3s ease;
+}
+nav a:hover {
+  color: #c084fc;
+}
+
+
+/* Opinie klientek - animated cards */
+.opinie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.opinia-box {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  transition: transform 0.6s cubic-bezier(0.25, 1.25, 0.5, 1), opacity 0.6s ease;
+}
+.opinia-box.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.opinia-box:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+.opinia-text {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 16px;
+}
+.opinia-author {
+  font-weight: bold;
+  color: #c084fc;
+}
+
+
+/* Hero overlay z różowo–fioletową poświatą */
+header .hero-img {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+header .hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+header .hero-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(192,132,252,0.4), rgba(236,72,153,0.4));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Hero napis z różową poświatą */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+}
+.hero-text h1 .highlight {
+  color: #ec4899;
+  text-shadow: 0 0 10px rgba(236,72,153,0.7),
+               0 0 20px rgba(236,72,153,0.5);
+}
+
+
+/* === RESPONSYWNOŚĆ === */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+  nav .nav-right {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  nav .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  .two-col {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .two-col .col-left,
+  .two-col .col-right {
+    min-width: 100%;
+  }
+  .section {
+    padding: 60px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+  header a {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  .testimonial-text {
+    font-size: 1rem;
+  }
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+
+
+
+
+
+
+/* === HAMBURGER MENU === */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Domyślnie ukryte menu */
+.nav-right {
+  display: none;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* Na telefonach */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-right {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(15,15,15,0.95);
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+  .nav-right.active {
+    display: flex; /* widoczne dopiero po kliknięciu */
+  }
+}
+
+
+
+
+
+
+/* === FIXED HAMBURGER MENU === */
+
+/* Domyślnie ukryte menu */
+.nav-right {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(15,15,15,0.95);
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.nav-right.active {
+  display: flex;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .nav-right {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
+  }
+}
+
+
+/* === DESKTOP FIX === */
+@media (min-width: 769px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: none; /* hamburger znika na desktopie */
+  }
+
+  .nav-right {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: auto;
+  }
+}
+
+
+/* === HERO MOBILE CENTER FIX === */
+@media (max-width: 768px) {
+  header .hero-img {
+    height: 70vh;
+    position: relative;
+  }
+
+  header .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  header .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  header .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  header .hero-text a {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+footer {
+  background: #1a1a1a;
+  padding: 20px 30px;
+  color: #bbb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+.footer-left div { display: flex; gap: 10px; }
+.footer-left a {
+  color: #c084fc;
+  text-decoration: none;
+}
+.footer-left a:hover {
+  text-decoration: underline;
+}
+.footer-right {
+  display: flex;
+  gap: 15px;
+}
+.footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#c084fc,#9333ea);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.2rem;
+}
+.footer-btn:hover {
+  opacity: 0.85;
+}
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .footer-right { order: 1; justify-content: center; }
+  .footer-left { order: 2; flex-direction: column; align-items: center; gap: 5px; }
+}
+.footer-left {
+    align-items: center;
+  }
+  .footer-right {
+    justify-content: center;
+  }
+}
+
+</style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Aurine</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html">Strona główna</a>
+        <a href="about.html">O nas</a>
+      
+        <a href="contact.html">Kontakt</a>
+      </div>
+      <a href="mailto:kontakt@aurine.pl" class="cta">Umów konsultację</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-img">
+      <img src="img/1.jpg" alt="Salon beauty" class="hero-img">
+      <div class="hero-text">
+        <h1>Facebook ads dla salonów <span class="highlight">beauty</span></h1>
+        <p>Pomagamy salonom kosmetycznym zdobywać nowe klientki dzięki skutecznej reklamie na Facebooku.</p>
+        <a href="mailto:kontakt@aurine.pl">Zacznij współpracę</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dlaczego Aurine -->
+  <section class="section">
+    <div class="two-col">
+      <div class="col-left">
+        <div class="underline">
+          <h2>Dlaczego Aurine?</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 72" preserveAspectRatio="none">
+            <path fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+              d="M 5,62.292028 C 86,58 150,55 201,56 240,58 244,60 251,62"></path>
+          </svg>
+        </div>
+        <p>Z nami Twój salon staje się widoczny dla właściwych osób – kobiet z Twojego miasta, które szukają usług beauty. Działamy kompleksowo, przejrzyście i skutecznie.</p>
+        <a href="mailto:kontakt@aurine.pl">Umów darmową konsultację</a>
+      </div>
+      <div class="col-right">
+        <div class="feature"><i class="fas fa-bullseye"></i><div><h4>Precyzyjne targetowanie</h4><p>Docieramy tylko do osób, które faktycznie mogą zostać Twoimi klientkami.</p></div></div>
+        <div class="feature"><i class="fas fa-chart-line"></i><div><h4>Więcej rezerwacji</h4><p>Kampanie nastawione na realne efekty – nie tylko lajki.</p></div></div>
+        <div class="feature"><i class="fas fa-hand-holding-heart"></i><div><h4>Prosta współpraca</h4><p>Transparentne działania, jasne raporty i szybki kontakt.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak to działa -->
+  <section class="section" style="background:#181818;">
+    <div class="two-col">
+      <div class="col-left">
+        <div class="underline">
+          <h3>Jak to działa?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 72" preserveAspectRatio="none">
+            <path fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+              d="M 5,62.292028 C 86,58 150,55 201,56 240,58 244,60 251,62"></path>
+          </svg>
+        </div>
+        <p>Współpraca z Aurine to prosty i przejrzysty proces. Krok po kroku przeprowadzimy Cię od pierwszej rozmowy aż po widoczne efekty w Twoim kalendarzu rezerwacji.</p>
+        <a href="oferta.pdf" class="btn-pdf" download>Zobacz ofertę współpracy</a>
+      </div>
+      <div class="col-right">
+        <div class="feature"><i class="fas fa-comments"></i><div><h4>Konsultacja</h4><p>Rozmawiamy o Twoim salonie i ustalamy cele reklamowe.</p></div></div>
+        <div class="feature"><i class="fas fa-bullhorn"></i><div><h4>Kampania</h4><p>Przygotowujemy i uruchamiamy skuteczne reklamy Facebook Ads.</p></div></div>
+        <div class="feature"><i class="fas fa-calendar-check"></i><div><h4>Efekty</h4><p>Nowe klientki i pełny kalendarz rezerwacji – mierzalne wyniki.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak zaczynamy współpracę -->
+  <section class="section steps">
+    <div class="underline" style="text-align:center;">
+      <h2>Jak zaczynamy współpracę?</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 72" preserveAspectRatio="none">
+        <path fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+          d="M 5,62.292028 C 86,58 150,55 201,56 240,58 244,60 251,62"></path>
+      </svg>
+    </div>
+    <div class="steps-grid">
+      <div class="step-box"><div class="step-icon"><i class="fas fa-handshake"></i></div><div class="step-title">1. Rozmowa zapoznawcza</div><div class="step-desc">Podczas krótkiej konsultacji poznajemy Twój salon, ofertę i oczekiwania. Ustalamy cele reklamowe i analizujemy możliwości.</div></div>
+      <div class="step-box"><div class="step-icon"><i class="fas fa-search"></i></div><div class="step-title">2. Analiza i strategia</div><div class="step-desc">Przygotowujemy plan działań dopasowany do Twojego salonu – od grup docelowych po budżet reklamowy i kreacje.</div></div>
+      <div class="step-box"><div class="step-icon"><i class="fas fa-bullhorn"></i></div><div class="step-title">3. Przygotowanie kampanii</div><div class="step-desc">Tworzymy skuteczne reklamy, grafiki i teksty, a następnie uruchamiamy kampanię na Facebooku.</div></div>
+      <div class="step-box"><div class="step-icon"><i class="fas fa-rocket"></i></div><div class="step-title">4. Start i efekty</div><div class="step-desc">Od pierwszych dni widzisz nowe zapytania i rezerwacje. Monitorujemy kampanie i stale je optymalizujemy.</div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="underline">
+      <h2>Najczęstsze pytania</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 72" preserveAspectRatio="none">
+        <path fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+          d="M 5,62.292028 C 86,58 150,55 201,56 240,58 244,60 251,62"></path>
+      </svg>
+    </div>
+    <div class="faq-item"><button class="faq-question">Czy muszę mieć już stronę internetową?</button><div class="faq-answer"><p>Nie, nie musisz. Reklamy na Facebooku kierujemy bezpośrednio do Twojego Messengera lub WhatsAppa.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Ile kosztuje współpraca?</button><div class="faq-answer"><p>Oferujemy elastyczne pakiety dopasowane do Twojego salonu. Koszt reklamy ustalamy indywidualnie.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Kiedy zobaczę efekty?</button><div class="faq-answer"><p>Pierwsze zapytania od nowych klientek pojawiają się często już w pierwszym tygodniu kampanii.</p></div></div>
+  </section>
+
+  
+  <!-- Opinie -->
+  <section class="section testimonials">
+    <div class="underline">
+      <h2>Opinie klientek</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 72" preserveAspectRatio="none">
+        <path fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+          d="M 5,62.292028 C 86,58 150,55 201,56 240,58 244,60 251,62"></path>
+      </svg>
+    </div>
+
+    <div class="testimonials-slider">
+      <div class="testimonial-card active">
+        <p class="testimonial-text">“Aurine pomogło mi zdobyć nowe klientki w pierwszym tygodniu.”</p>
+        <div class="testimonial-author">– Anna, kosmetyczka</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Reklamy w końcu zaczęły działać i kalendarz się zapełnił.”</p>
+        <div class="testimonial-author">– Klaudia, stylistka paznokci</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Prosta współpraca, jasne zasady i szybkie efekty.”</p>
+        <div class="testimonial-author">– Monika, fryzjerka</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Najlepsza decyzja dla mojego salonu – więcej klientek i spokój w pracy.”</p>
+        <div class="testimonial-author">– Ewa, makijażystka</div>
+      </div>
+    </div>
+
+    <div class="slider-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  
+  
+  
+  
+  <footer>
+    <div class="footer-left">
+      <div>© 2025 Aurine. All Rights Reserved</div>
+      <div>
+        <a href="privacy.html">Polityka Prywatności</a> | 
+        <a href="terms.html">Regulamin</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:kontakt@aurine.pl" class="footer-btn">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://wa.me/48731856524" class="footer-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </footer>
+
+
+
+
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => button.parentElement.classList.toggle('active'));
+    });
+
+    
+
+// Testimonials slider (glassmorphism)
+const slides = document.querySelectorAll(".testimonial-card");
+const dots = document.querySelectorAll(".slider-dots span");
+let current = 0;
+let intervalId;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+    dots[i].classList.toggle("active", i === index);
+  });
+  current = index;
+}
+
+function startSlider() {
+  intervalId = setInterval(() => {
+    showSlide((current + 1) % slides.length);
+  }, 6000);
+}
+
+dots.forEach((dot, i) =>
+  dot.addEventListener("click", () => {
+    showSlide(i);
+    clearInterval(intervalId);
+    startSlider();
+  })
+);
+
+startSlider();
+
+
+
+    // Steps animation with delay
+    const stepBoxes = document.querySelectorAll(".step-box");
+    function revealSteps() {
+      stepBoxes.forEach((box, i) => {
+        const boxTop = box.getBoundingClientRect().top;
+        if (boxTop < window.innerHeight - 50) {
+          setTimeout(() => box.classList.add("show"), i * 200);
+        }
+      });
+    }
+    window.addEventListener("scroll", revealSteps);
+    window.addEventListener("load", revealSteps);
+  
+// Opinie reveal animation
+document.addEventListener("DOMContentLoaded", () => {
+  const opinie = document.querySelectorAll('.opinia-box');
+  const obsOpinie = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if(entry.isIntersecting){
+        setTimeout(() => entry.target.classList.add('show'), i * 150);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+  opinie.forEach(op => obsOpinie.observe(op));
+});
+
+
+
+// Hamburger menu toggle
+const toggle = document.querySelector('.menu-toggle');
+const navRight = document.querySelector('.nav-right');
+
+toggle.addEventListener('click', () => {
+  navRight.classList.toggle('active');
+  toggle.innerHTML = navRight.classList.contains('active')
+    ? '<i class="fas fa-times"></i>'
+    : '<i class="fas fa-bars"></i>';
+});
+
+</script>
+</body>
+</html>
