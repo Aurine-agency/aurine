@@ -260,12 +260,10 @@ header .hero-img::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.5),        /* czarny półprzezroczysty */
-    rgba(236, 72, 153, 0.5)    /* róż */
-  );
-  mix-blend-mode: multiply; /* ciemniejsze mieszanie */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),   /* przyciemnienie */
+    linear-gradient(135deg, rgba(236,72,153,0.4), rgba(192,132,252,0.4)); /* róż */
+  mix-blend-mode: overlay;
   pointer-events: none;
 }
 
