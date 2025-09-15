@@ -260,10 +260,15 @@ header .hero-img::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(192,132,252,0.4), rgba(236,72,153,0.4));
-  mix-blend-mode: overlay;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5),        /* czarny półprzezroczysty */
+    rgba(236, 72, 153, 0.5)    /* róż */
+  );
+  mix-blend-mode: multiply; /* ciemniejsze mieszanie */
   pointer-events: none;
 }
+
 
 /* Hero napis z różową poświatą */
 .hero-text h1 {
