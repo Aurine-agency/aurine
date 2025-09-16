@@ -6,30 +6,12 @@
   <title>Kontakt – Aurine</title>
 
   <!-- Favicony -->
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48x48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180x180.png">
-<link rel="icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180x180.png">
+  <link rel="icon" href="img/favicon.ico">
 
-<!-- SEO meta -->
-<meta name="description" content="Skontaktuj się z Aurine – napisz do nas na kontakt@aurine.pl lub WhatsApp i dowiedz się, jak pozyskać nowe klientki.">
-<meta name="keywords" content="aurine kontakt, aurine email, aurine whatsapp, facebook ads kontakt">
-<meta name="author" content="Aurine">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Kontakt – Aurine">
-<meta property="og:description" content="Napisz do nas maila lub na WhatsApp i porozmawiajmy o reklamie dla Twojego salonu.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aurine.pl/contact.html">
-<meta property="og:image" content="https://aurine.pl/img/share.jpg">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kontakt – Aurine">
-<meta name="twitter:description" content="Skontaktuj się z Aurine – chętnie odpowiemy na Twoje pytania.">
-<meta name="twitter:image" content="https://aurine.pl/img/share.jpg">
-  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -37,8 +19,20 @@
     body { font-family: 'Poppins', sans-serif; background: #121212; color: #eee; line-height: 1.6; }
 
     /* === NAVIGATION === */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1a1a1a; position: sticky; top: 0; z-index: 100; }
-    nav .logo { font-weight: 700; font-size: 1.4rem; color: #c084fc; text-decoration: none; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(26, 26, 26, 0.6); /* półprzezroczyste tło */
+      backdrop-filter: blur(10px);        /* rozmycie */
+      -webkit-backdrop-filter: blur(10px);/* wsparcie Safari */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtelna linia */
+    }
+    nav .logo { font-weight: 700; font-size: 1.4rem; color: #c084fc; }
     nav .nav-links { display: flex; gap: 20px; align-items: center; }
     nav .nav-links a { color: #eee; text-decoration: none; font-weight: 500; transition: 0.3s; }
     nav .nav-links a:hover { color: #c084fc; }
@@ -118,7 +112,7 @@
 <body>
   <!-- NAV -->
   <nav>
-    <a href="/" class="logo">Aurine</a> 
+    <div class="logo">Aurine</div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <div class="nav-right">
       <div class="nav-links">
