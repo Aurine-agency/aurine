@@ -37,7 +37,19 @@
     body { font-family: 'Poppins', sans-serif; background: #121212; color: #eee; line-height: 1.6; }
 
     /* === NAVIGATION === */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1a1a1a; position: sticky; top: 0; z-index: 100; }
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(26, 26, 26, 0.6); /* półprzezroczyste tło */
+  backdrop-filter: blur(10px);        /* rozmycie tła */
+  -webkit-backdrop-filter: blur(10px);/* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtelna linia */
+}
     nav .logo { font-weight: 700; font-size: 1.4rem; color: #c084fc; text-decoration: none; }
     nav .nav-links { display: flex; gap: 20px; align-items: center; }
     nav .nav-links a { color: #eee; text-decoration: none; font-weight: 500; transition: 0.3s; }
