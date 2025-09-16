@@ -611,6 +611,38 @@ footer {
   .mobile-only .btn-pdf { display: inline-block; width: 100%; }
 }
 
+
+/* === FIX NAV MOBILE (nie rusza desktopu) === */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    flex-direction: row; /* logo i hamburger obok siebie */
+    align-items: center;
+    padding: 15px 20px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .nav-right {
+    display: none; /* ukryte domyślnie */
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(15,15,15,0.95);
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+  .nav-right.active {
+    display: flex; /* pokazuje się dopiero po kliknięciu */
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
